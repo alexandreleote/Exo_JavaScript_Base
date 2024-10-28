@@ -2,6 +2,7 @@
 
 const colorSquares = document.querySelectorAll('.square');
 const identifySquare = document.querySelector("#result");
+const resetBtn = document.querySelector('#btn');
 
 /* FUNCTIONS */
 
@@ -15,3 +16,12 @@ colorSquares.forEach(square => { // For each square we add an event listener on 
 
     });
 });
+
+resetBtn.addEventListener('click', resetColors);
+
+function resetColors () {
+    const bgColor = ""; // We set the value to "" so that we erase the value it has been given previously
+
+    identifySquare.style.backgroundColor = bgColor;
+    identifySquare.textContent = bgColor;
+};

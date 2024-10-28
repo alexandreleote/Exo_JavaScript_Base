@@ -48,3 +48,25 @@
 #yellow {
     background-color: rgb(255, 187, 0);
 }
+
+/* BUTTON */
+
+#btn {
+    cursor: pointer;
+    color: #000000;
+    background-color: #c9c9c9;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0.7em;
+    font-size: 20px;
+}
+
+#btn:hover {
+    background-color: #8f8f8f;
+}
+
+#btn:active {
+    background-color: #000000;
+    color: #c9c9c9;
+    border: 1px solid #c9c9c9;
+}

@@ -3,3 +3,22 @@
 body {
     background-color: lightgray;
 }
+
+/* CONTAINER */
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* QUOTES */
+
+.text {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}

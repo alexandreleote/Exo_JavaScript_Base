@@ -90,3 +90,5 @@ let quotes = [
         "content": "La vie c’est comme ça tout le temps ? Ou c’est seulement quand on est petit ?"
     },
 ]
+
+export default quotes;

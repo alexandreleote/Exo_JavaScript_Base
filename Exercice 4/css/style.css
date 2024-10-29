@@ -45,12 +45,21 @@ body {
     justify-content: center;
     transition: .8s ease-in-out;
     flex-direction: column;
+    border: 1px solid transparent;
 }
 
 .media.active {
     border-radius: 1rem;
     transform: translateY(-10px);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 1px solid whitesmoke;
+}
+
+.media.other {
+    border-radius: 0;
+    transform: translateY(0);
+    box-shadow: none;
+    border: 1px solid transparent;
 }
 
 .text {
@@ -92,7 +101,6 @@ body {
 #twitter:hover {
     background-color: #44b0f3;
 }
-
 
     /* Instagram */
 #instagram {

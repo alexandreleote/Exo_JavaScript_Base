@@ -1,27 +1,63 @@
 /* OVERALL PARAMETERS */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    padding: 2em;
     background-color: lightgray;
 }
 
 /* CONTAINER */
 
 #container {
+    padding: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* QUOTES */
 
 .text {
     background-color: white;
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: auto;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+/* We add some styling to the titles, contents and authors class */
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+    margin: 5px;
+    padding: 2em;
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.author {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
 }

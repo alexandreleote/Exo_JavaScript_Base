@@ -1,6 +1,7 @@
 import quotes from './quotes.js';
 
-const quoteText = document.querySelector('.text');
+// We select the parent container in which we will create the div that will receive the content
+const textContainer = document.querySelector('#container');
 
 // Console.log details
 Object.entries(quotes).forEach(([key, value]) => console.log(value));
@@ -8,11 +9,20 @@ Object.entries(quotes).forEach(([key, value]) => console.log(value));
 
 // Display it inside one div
 Object.entries(quotes).forEach(([key, value]) => {
-    quoteText.textContent += value.title + " ";
-    quoteText.textContent += value.content + " ";
-    quoteText.textContent += value.author;
+
+    // We create a div in the DOM
+    var newDiv = document.createElement('div');
+
+    // We add a class 'text' to it
+    newDiv.classList.add('text');
+
+    // Then assign the created div to the DOM container
+    textContainer.appendChild(newDiv);
     
-    for (i = 0 ; i <= quotes.id.length ; i++) {
-        
-    }
+    // We add the content from the value inside the div
+    newDiv.innerHTML = `
+    <h2 class="title">${value.title}</h2>
+    <p class="content">"${value.content}"</p>
+    <p class="author">${value.author}</p>
+    `
 })

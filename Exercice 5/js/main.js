@@ -7,7 +7,7 @@ const textContainer = document.querySelector('#container');
 let favoriteStatus = JSON.parse(localStorage.getItem('favoriteStatus') || "[]");
 
 // Console.log details of all quotes to see that we get the right values
-/* Object.entries(quotes).forEach(([key, value]) => console.log(value)); */
+/* quotes.forEach((quote) => console.log(quote)); */
 
 // We creat a reset all button for the like
 textContainer.innerHTML = `
@@ -18,11 +18,21 @@ textContainer.innerHTML = `
 const clearBtn = textContainer.querySelector('#clear-btn');
 
 clearBtn.addEventListener('click', () => {
+    // We clear the localStorage
     localStorage.clear();
-})
 
-// Display it inside one div
-Object.entries(quotes).forEach(([key, value]) => {
+    // Empty the array in which we saved our likes
+    favoriteStatus = [];
+
+    // Target all the hearts on the page on which we remove the like aspect to give back the default aspect
+    document.querySelectorAll('.fa-heart').forEach( iconClass => {
+        iconClass.classList.remove('fa-solid');
+        iconClass.classList.add('fa-regular');
+    });
+});
+
+// Display each one of the quotes in a separate div inside the container
+quotes.forEach((quote) => {
 
     // We create a div in the DOM
     var newDiv = document.createElement('div');
@@ -30,8 +40,8 @@ Object.entries(quotes).forEach(([key, value]) => {
     // We add a class 'text' to it
     newDiv.classList.add('text');
 
-    // Target the iconClass of the icon to like the quote -> we target our value otherwise we won't display it
-    let isFavorite = favoriteStatus.includes(value.id);
+    // Target the iconClass of the icon to like the quote -> we target our value so we can display it
+    let isFavorite = favoriteStatus.includes(quote.id);
     let iconClass = isFavorite ? "fa-solid" : "fa-regular" ;
 
     // Then assign the created div to the DOM container
@@ -39,41 +49,37 @@ Object.entries(quotes).forEach(([key, value]) => {
     
     // We add the content from the value inside the div
     newDiv.innerHTML = `
-    <h2 class="title">${value.title}</h2>
-    <p class="content">"${value.content}"</p>
-    <p class="author">${value.author}</p>
+    <h2 class="title">${quote.title}</h2>
+    <p class="content">"${quote.content}"</p>
+    <p class="author">${quote.author}</p>
     <button class="favorite-btn"><i class="${iconClass} fa-heart"></i></button>
     `;
 
     // Favorite button animation on click
-
         // First we select the button
     const favoriteBtn = newDiv.querySelector('.fa-heart');
     
         // We add an event listener on the button when clicked
-    favoriteBtn.addEventListener('click', (checkStatus));
+    favoriteBtn.addEventListener('click', () => {
+        checkStatus(quote.id); // We specify the function to check the status of the id related to each quote
+    });
     
+    // Our function checking if the button has already been clicked thus expressing the like on the quote
+    function checkStatus(id) { // We specify that the id here helps us to toggle the like button
     
-    function checkStatus(id) {
-
-        // Then we check if the value is false at first => then we have an empty heart with 'fa-regular'
-        if (favoriteStatus.includes(value.id)) {
-            // First we make the toggle of the iconClass happen by diffencing when the value is true then becoming false and vice versa
-            favoriteStatus = favoriteStatus.filter(id => id != value.id);
-            favoriteBtn.classList.remove('fa-regular');
-            favoriteBtn.classList.add('fa-solid'); 
- 
-        } else { // And if the heart is whole at first, when we click it we empty it deleting the 'fa-solid'
-            favoriteBtn.classList.add('fa-regular');
+        if (favoriteStatus.includes(id)) {
+            // If the the quote is liked then we want to empty the heart icon in order to unlike the quote by removing 'fa-solid'
+            favoriteStatus = favoriteStatus.filter(id => id != quote.id);
+            favoriteBtn.classList.add('fa-regular'); 
             favoriteBtn.classList.remove('fa-solid');
-            favoriteStatus.push(value.id);
+            
+        } else { // And if the heart is empty at first, when we click it we make it plain by removing the 'fa-regular'
+            favoriteBtn.classList.remove('fa-regular'); 
+            favoriteBtn.classList.add('fa-solid'); 
+            favoriteStatus.push(quote.id);
         }
-        
-        console.log(favoriteBtn);
-
+            
         // We store in the localStorage the status of the button
         localStorage.setItem('favoriteStatus', JSON.stringify(favoriteStatus));
     };
-    
 });
-

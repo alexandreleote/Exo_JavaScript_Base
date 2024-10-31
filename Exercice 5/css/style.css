@@ -82,3 +82,28 @@ body {
 .fa-solid:hover {
     color: rgb(224, 35, 41);
 }
+
+/* BUTTONS */
+
+#clear-btn {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 6;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+}
+
+#clear-btn:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#clear-btn:active {
+    background-color: white;
+    color: black;
+}

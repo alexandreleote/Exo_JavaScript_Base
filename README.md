@@ -61,50 +61,50 @@ Concepts :
 ## 🚀 Structure du projet
 
 ```
-todo-list/
+Exo_JavaScript_Base/
 │
 ├── README.md
 │
 ├── Exercice 1/
 │	│
 │	├── css/
-│ 	│  	└── style.css
+│ 	│  └── style.css
 │	├── js/
-│	│  	└── main.js
-│   └── index.html
+│	│  └── main.js
+│  	└── index.html
 │
 ├── Exercice 2/
 │	│
 │	├── css/
-│ 	│  	└── style.css
+│ 	│  └── style.css
 │	├── js/
-│	│  	└── main.js
-│   └── index.html
+│	│  └── main.js
+│   	└── index.html
 │
 ├── Exercice 3/
 │	│
 │	├── css/
-│ 	│  	└── style.css
+│ 	│  └── style.css
 │	├── js/
-│	│  	└── main.js
-│   └── index.html
+│	│  └── main.js
+│   	└── index.html
 │
 ├── Exercice 4/
 │	│
 │	├── css/
-│ 	│  	└── style.css
+│ 	│  └── style.css
 │	├── js/
-│	│  	└── main.js
-│   └── index.html
+│	│  └── main.js
+│   	└── index.html
 │
 └── Exercice 5/
  	│
  	├── css/
-  	│  	└── style.css
+  	│  └── style.css
  	├── js/
-	│ 	├── main.js
- 	│  	└── quotes.js
-    └── index.html
+	│  ├── main.js
+ 	│  └── quotes.js
+    	└── index.html
 ```
 ## ✨ Démonstration
 Captures d'écran<br>

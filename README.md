@@ -1,4 +1,4 @@
-# Projet ToDo List - Apprentissage JavaScript Fondamental
+# Projet Exercices - Apprentissage JavaScript Fondamental
 
 ## 📋 Contexte du projet
 
